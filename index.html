@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+*{padding: 0px; margin: 0px;}
+body{
+	display: flex;
+	width: 100%;
+}
+
+body div{
+	min-width: 500px;
+}
+</style>
+</head>
+
+<body>
+<div>123123</div>
+<div>123123</div>
+<div>123123</div>
+<div>123123</div>
+<div>123123</div>
+<script>
+	var width = document.querySelector("body").offsetWidth;
+	window.addEventListener("mousewheel" , (e)=>{
+		this.scrollX += e.deltaY;
+		if(width < this.scrollX) this.scrollX = width + e.deltaY;
+		else if(this.scrollX <= 0) this.scrollX = 0;
+		window.scroll(window.scrollX,0);
+	});
+</script>
+</body>
+
+</html>
